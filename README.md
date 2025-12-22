@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Portfolio Chadi El Fai - Data Scientist
 
 Portfolio web interactif et professionnel pour un Data Scientist / Data Analyst / ML Engineer junior.
@@ -154,3 +155,6 @@ Pour toute question ou suggestion, n'hésitez pas à ouvrir une issue ou à me c
 
 **Développé avec ❤️ pour Chadi El Fai**
 
+=======
+# portfolio
+>>>>>>> 93a86a511dfea00f5da32e297ae7aff91703bbb0
