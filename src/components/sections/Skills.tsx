@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { skills, softSkills } from '../../data'
 import { BarChart3 } from 'lucide-react'
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts'
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip } from 'recharts' 
 
 export default function Skills() {
   // Préparer les données pour le radar chart
@@ -13,12 +13,23 @@ export default function Skills() {
   }
 
   const radarData = Object.entries(skillCategories).map(([category, categorySkills]) => {
-    const avgLevel = categorySkills.reduce((sum, s) => sum + s.level, 0) / categorySkills.length
+    const safeSkills = categorySkills || []
+    const avgLevel = safeSkills.length > 0 ? Math.round(safeSkills.reduce((sum, s) => sum + s.level, 0) / safeSkills.length) : 0
+    const topSkills = safeSkills
+      .slice()
+      .sort((a, b) => b.level - a.level)
+      .slice(0, 3)
+      .map(s => `${s.name} (${s.level}%)`)
+      .join(', ')
     return {
       category: category.replace('Frameworks', 'Frameworks\n& Libs'),
       level: avgLevel,
+      count: safeSkills.length,
+      topSkills,
     }
   })
+
+  const radarDataSorted = radarData.slice().sort((a, b) => b.level - a.level)
 
   return (
     <section id="skills" className="py-20 bg-gray-800/50">
@@ -49,16 +60,35 @@ export default function Skills() {
                 </h3>
               </div>
               <ResponsiveContainer width="100%" height={400}>
-                <RadarChart data={radarData}>
+                <RadarChart data={radarDataSorted}>
                   <PolarGrid stroke="#374151" />
                   <PolarAngleAxis
                     dataKey="category"
                     tick={{ fill: '#9CA3AF', fontSize: 12 }}
+                    tickFormatter={(value: string, index: number) => {
+                      const item = radarDataSorted[index]
+                      const name = value.replace('\n', ' ')
+                      return item ? `${name} (${item.count})` : name
+                    }}
                   />
                   <PolarRadiusAxis
                     angle={90}
                     domain={[0, 100]}
                     tick={{ fill: '#9CA3AF', fontSize: 10 }}
+                  />
+                  <Tooltip
+                    content={({ payload, label }) => {
+                      if (!payload || !payload.length) return null
+                      const item = radarDataSorted.find(d => d.category.replace('\n', ' ') === label || d.category === label)
+                      return (
+                        <div className="bg-gray-800 border border-gray-700 p-3 text-sm text-gray-200 rounded">
+                          <div className="font-medium">{label}</div>
+                          <div>Niveau moyen: {payload[0].value}%</div>
+                          <div>Compétences: {item?.count ?? 0}</div>
+                          <div>Top: {item?.topSkills ?? '—'}</div>
+                        </div>
+                      )
+                    }}
                   />
                   <Radar
                     name="Niveau"
@@ -69,6 +99,9 @@ export default function Skills() {
                   />
                 </RadarChart>
               </ResponsiveContainer>
+              <p className="text-sm text-gray-400 mt-3">
+                Le radar montre le niveau moyen par catégorie. Passez la souris sur chaque axe pour voir le nombre de compétences et le top 3.
+              </p>
             </motion.div>
 
             {/* Hard Skills par catégorie */}

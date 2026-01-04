@@ -46,10 +46,19 @@ export default function ScreenshotGallery({ screenshots }: ScreenshotGalleryProp
             whileHover={{ scale: 1.05 }}
           >
             <div className="relative overflow-hidden rounded-lg bg-gray-800 aspect-video">
-              {/* Placeholder pour l'image */}
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-700 to-gray-800">
-                <span className="text-gray-500 text-sm">Image: {screenshot.title}</span>
-              </div>
+              {/* Image réelle si disponible */}
+              {screenshot.imagePath ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={screenshot.imagePath}
+                  alt={screenshot.title}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-700 to-gray-800">
+                  <span className="text-gray-500 text-sm">Image: {screenshot.title}</span>
+                </div>
+              )}
               
               {/* Overlay au hover */}
               <div className="absolute inset-0 bg-primary-500/0 group-hover:bg-primary-500/20 transition-all duration-300 flex items-center justify-center">
@@ -113,9 +122,16 @@ export default function ScreenshotGallery({ screenshots }: ScreenshotGalleryProp
               {/* Image */}
               <div className="bg-gray-800 rounded-lg overflow-hidden">
                 <div className="w-full h-[70vh] flex items-center justify-center bg-gradient-to-br from-gray-700 to-gray-800">
-                  <span className="text-gray-400 text-lg">
-                    {screenshots[selectedIndex].title}
-                  </span>
+                  {screenshots[selectedIndex].imagePath ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={screenshots[selectedIndex].imagePath}
+                      alt={screenshots[selectedIndex].title}
+                      className="max-h-[70vh] object-contain"
+                    />
+                  ) : (
+                    <span className="text-gray-400 text-lg">{screenshots[selectedIndex].title}</span>
+                  )}
                 </div>
                 
                 <div className="p-6 bg-gray-900">
